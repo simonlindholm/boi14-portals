@@ -1,4 +1,9 @@
 # TODO: Verify that there are unreachable areas in each subtask
+# TODO: Verify that there is a test case with no portal usage in each subtask
+# TODO: Cases with R != C
+# A case with no portals and a long walk?
+
+alias python='pypy' # (faster, but optional)
 
 # Subtask 1 (20 points): 1 <= R <= 10, 1 <= C <= 10
 
@@ -19,6 +24,12 @@ python gen-maze.py 200 200 1 300 7      >task.4-06.in   # labyrinth with some fr
 python gen-maze.py 200 200 1 3000 7     >task.4-07.in   # labyrinth with even more freedom
 
 # Subtask 5 (20 points): 1 <= R <= 1000, 1 <= C <= 1000
+python gen-random.py 1000 1000 100 0 20 >task.5-01.in   # sparse
+python gen-random.py 1000 1000 3 0 23   >task.5-02.in   # sparse, no portal usage
+python gen-empty.py 1000 1000           >task.5-03.in   # large empty areas
+python gen-maze.py 1000 1000 0 0 10     >task.5-04.in   # long path (85k steps)
+python gen-maze.py 1000 1000 1 30000 27 >task.5-05.in   # labyrinth with even more freedom
+python gen-maze.py 1000 1000 1 1000 32  >task.5-06.in   # labyrinth with some freedom
 
 # Solutions
 make portals
