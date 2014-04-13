@@ -6,8 +6,8 @@ import random
 
 R = int(sys.argv[1])
 C = int(sys.argv[2])
-p = int(sys.argv[3])
-should_fill = bool(int(sys.argv[4]))
+p = int(sys.argv[3]) # approximate number of # tiles
+should_fill = bool(int(sys.argv[4])) # 1 to generate a fractal-like structure (not really an interesting test case, but anyhow)
 seed = int(sys.argv[5])
 
 random.seed(seed)

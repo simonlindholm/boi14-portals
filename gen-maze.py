@@ -6,8 +6,8 @@ import random
 
 R = int(sys.argv[1])
 C = int(sys.argv[2])
-allow_four_crossing = bool(int(sys.argv[3]))
-holes = int(sys.argv[4])
+allow_four_crossing = bool(int(sys.argv[3])) # 0 for subtask 3; otherwise there will be squares with no wall nearby
+holes = int(sys.argv[4]) # approximate number of # tiles that are converted into . (giving more freedom in pathfinding)
 seed = int(sys.argv[5])
 
 random.seed(seed)
