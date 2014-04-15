@@ -6,13 +6,22 @@
 alias python='pypy' # (faster, but optional)
 
 # Subtask 1 (20 points): 1 <= R <= 10, 1 <= C <= 10
+cp manual/single-line.txt                task.1-01.in   # single line, no portal usage
+cp manual/walking.txt                    task.1-02.in   # no portal usage
+python gen-maze.py 10 10 1 0 1          >task.1-03.in   # long path
+python gen-maze.py 10 10 1 20 6         >task.1-04.in   # labyrinth with some freedom
+python gen-maze.py 10 10 1 25 8         >task.1-05.in   # another one
+python gen-maze.py 10 10 1 40 14        >task.1-06.in   # a third one
+python gen-random.py 10 10 20 0 15      >task.1-07.in   # random, some open areas
 
 # Subtask 2 (20 points): 1 <= R <= 50, 1 <= C <= 50
+# no portal usage
+# case where nearest wall is on the edge
 
 # Subtask 3 (20 points): 1 <= R <= 200, 1 <= C <= 200, and every open square has at least one wall adjacent to it
 cp manual/single-line.txt                task.3-01.in   # single line, no portal usage
 python gen-maze.py 200 200 0 0 5        >task.3-02.in   # long path
-python gen-maze.py 200 200 0 7000 6     >task.3-03.in   # labyrinth with some more freedom
+python gen-maze.py 200 200 0 7000 6     >task.3-03.in   # labyrinth with some freedom
 
 # Subtask 4 (20 points): 1 <= R <= 200, 1 <= C <= 200
 python gen-random.py 200 200 30 1 9     >task.4-01.in   # fractalish
