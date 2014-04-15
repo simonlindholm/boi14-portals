@@ -10,7 +10,7 @@ alias python='pypy' # (faster, but optional)
 # Subtask 2 (20 points): 1 <= R <= 50, 1 <= C <= 50
 
 # Subtask 3 (20 points): 1 <= R <= 200, 1 <= C <= 200, and every open square has at least one wall adjacent to it
-cp single-line.txt                       task.3-01.in   # single line, no portal usage
+cp manual/single-line.txt                task.3-01.in   # single line, no portal usage
 python gen-maze.py 200 200 0 0 5        >task.3-02.in   # long path
 python gen-maze.py 200 200 0 7000 6     >task.3-03.in   # labyrinth with some more freedom
 
@@ -28,11 +28,11 @@ python gen-random.py 1000 1000 100 0 20 >task.5-01.in   # sparse
 python gen-random.py 1000 1000 3 0 23   >task.5-02.in   # sparse, no portal usage
 python gen-empty.py 1000 1000           >task.5-03.in   # large empty areas
 python gen-maze.py 1000 1000 0 0 10     >task.5-04.in   # long path (85k steps)
-python gen-maze.py 1000 1000 1 30000 27 >task.5-05.in   # labyrinth with even more freedom
-python gen-maze.py 1000 1000 1 1000 32  >task.5-06.in   # labyrinth with some freedom
+python gen-maze.py 1000 1000 1 1000 32  >task.5-05.in   # labyrinth with some freedom
+python gen-maze.py 1000 1000 1 30000 27 >task.5-06.in   # labyrinth with even more freedom
 
 # Solutions
-make portals
+make solver
 for T in *.in; do
-	./portals <$T >${T%.in}.sol
+	./solver <$T >${T%.in}.sol
 done
