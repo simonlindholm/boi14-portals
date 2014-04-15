@@ -23,8 +23,10 @@ python gen-random.py 10 10 20 0 15      >$OUT/task.1-08.in   # random, some open
 
 # Subtask 3 (20 points): 1 <= R <= 200, 1 <= C <= 200, and every open square has at least one wall adjacent to it
 cp manual/single-line.txt                $OUT/task.3-01.in   # single line, no portal usage
-python gen-maze.py 200 200 0 0 5        >$OUT/task.3-02.in   # long path
-python gen-maze.py 200 200 0 7000 6     >$OUT/task.3-03.in   # labyrinth with some freedom
+cp manual/walking                        $OUT/task.3-02.in   # no portal usage
+python gen-maze.py 200 200 0 0 5        >$OUT/task.3-03.in   # long path
+python gen-maze.py 200 200 0 7000 6     >$OUT/task.3-04.in   # labyrinth with some freedom
+python gen-maze.py 200 200 0 42000 612  >$OUT/task.3-05.in   # labyrinth with even more freedom
 
 # Subtask 4 (20 points): 1 <= R <= 200, 1 <= C <= 200
 python gen-random.py 200 200 30 1 9     >$OUT/task.4-01.in   # fractalish
