@@ -2,6 +2,7 @@
 
 alias python='pypy' # (faster, but optional)
 
+mkdir -p tests
 OUT=tests # output directory
 
 # Subtask 1 (20 points): 1 <= R <= 10, 1 <= C <= 10
@@ -17,7 +18,7 @@ python gen-random.py 10 10 20 0 15      >$OUT/task.1-08.in   # random, some open
 # Subtask 2 (20 points): 1 <= R <= 50, 1 <= C <= 50
 cp manual/single-line.txt                $OUT/task.2-01.in   # single line, no portal usage
 cp manual/walking.txt                    $OUT/task.2-02.in   # no portal usage
-python gen-random.py 50 50 30 0         >$OUT/task.2-03.in   # sparse random
+python gen-random.py 50 50 30 0 1       >$OUT/task.2-03.in   # sparse random
 python gen-empty.py 50 50               >$OUT/task.2-04.in   # large empty areas
 python gen-maze.py 50 50 1 0 4          >$OUT/task.2-05.in   # long path
 python gen-maze.py 50 50 1 240 11       >$OUT/task.2-06.in   # labyrinth with some freedom
@@ -26,11 +27,10 @@ python gen-maze.py 50 50 1 700 19       >$OUT/task.2-08.in   # labyrinth with ev
 
 # Subtask 3 (20 points): 1 <= R <= 200, 1 <= C <= 200, and every open square has at least one wall adjacent to it
 cp manual/single-line.txt                $OUT/task.3-01.in   # single line, no portal usage
-cp manual/walking                        $OUT/task.3-02.in   # no portal usage
+cp manual/walking.txt                    $OUT/task.3-02.in   # no portal usage
 python gen-maze.py 200 200 0 0 5        >$OUT/task.3-03.in   # long path
 python gen-maze.py 200 200 0 7000 6     >$OUT/task.3-04.in   # labyrinth with some freedom
 python gen-maze.py 200 200 0 42000 612  >$OUT/task.3-05.in   # labyrinth with even more freedom
-python gen-maze.py 50 50 1 240 16       >$OUT/task.2-07.in   # another one, with a crossing
 
 # Subtask 4 (20 points): 1 <= R <= 200, 1 <= C <= 200
 cp manual/single-line.txt                $OUT/task.4-01.in   # single line, no portal usage
@@ -54,6 +54,6 @@ python gen-maze.py 1000 1000 1 30000 27 >$OUT/task.5-08.in   # labyrinth with ev
 
 # Solutions
 g++ -O2 solver.cpp -o solver
-for T in *.in; do
+for T in $OUT/*.in; do
 	./solver <$T >${T%.in}.sol
 done
