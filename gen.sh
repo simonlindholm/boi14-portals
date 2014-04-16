@@ -9,11 +9,12 @@ OUT=tests # output directory
 cp manual/sample.txt                      $OUT/task.1-01p.in  # sample
 cp manual/single-line.txt                 $OUT/task.1-02.in   # single line, no portal usage
 cp manual/walking.txt                     $OUT/task.1-03.in   # no portal usage
-python gen-maze.py 10 10 1 0 1           >$OUT/task.1-04.in   # long path
-python gen-maze.py 10 10 1 20 6          >$OUT/task.1-05.in   # labyrinth with some freedom
-python gen-maze.py 10 10 1 25 8          >$OUT/task.1-06.in   # another one
-python gen-maze.py 10 10 1 40 14         >$OUT/task.1-07.in   # a third one
-python gen-random.py 10 10 20 0 15       >$OUT/task.1-08.in   # random, some open areas
+cp manual/crossing.txt                    $OUT/task.1-04.in   # crossing of portal paths
+python gen-maze.py 10 10 1 0 1           >$OUT/task.1-05.in   # long path
+python gen-maze.py 10 10 1 20 6          >$OUT/task.1-06.in   # labyrinth with some freedom
+python gen-maze.py 10 10 1 25 8          >$OUT/task.1-07.in   # another one
+python gen-maze.py 10 10 1 40 14         >$OUT/task.1-08.in   # a third one
+python gen-random.py 10 10 20 0 15       >$OUT/task.1-09.in   # random, some open areas
 
 # Subtask 2 (20 points): 1 <= R <= 50, 1 <= C <= 50
 cp manual/single-line.txt                 $OUT/task.2-01.in   # single line, no portal usage
@@ -34,7 +35,7 @@ python gen-maze.py 200 200 0 42000 612   >$OUT/task.3-05.in   # labyrinth with e
 
 # Subtask 4 (20 points): 1 <= R <= 200, 1 <= C <= 200
 cp manual/single-line.txt                 $OUT/task.4-01.in   # single line, no portal usage
-python gen-random.py 200 200 30 1 9      >$OUT/task.4-02.in   # fractalish
+python gen-random.py 200 200 30 1 9      >$OUT/task.4-02.in   # fractalish, with a crossing
 python gen-random.py 200 200 10000 0 11  >$OUT/task.4-03.in   # dense random
 python gen-random.py 200 200 10 0 12     >$OUT/task.4-04.in   # sparse, no portal usage
 python gen-empty.py 200 200              >$OUT/task.4-06.in   # large empty areas
@@ -44,7 +45,7 @@ python gen-maze.py 200 200 1 3000 7      >$OUT/task.4-08.in   # labyrinth with e
 
 # Subtask 5 (20 points): 1 <= R <= 1000, 1 <= C <= 1000
 cp manual/single-line.txt                 $OUT/task.5-01.in   # single line, no portal usage
-python gen-random.py 1000 1000 1200 1 20 >$OUT/task.5-02.in   # fractalish
+python gen-random.py 1000 1000 1200 1 20 >$OUT/task.5-02.in   # fractalish, with a crossing
 python gen-random.py 1000 1000 100 0 20  >$OUT/task.5-03.in   # sparse
 python gen-random.py 1000 1000 3 0 23    >$OUT/task.5-04.in   # sparse, no portal usage
 python gen-empty.py 1000 1000            >$OUT/task.5-05.in   # large empty areas
